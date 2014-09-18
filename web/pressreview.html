@@ -1,0 +1,22 @@
+<link rel="import" href="packages/polymer/polymer.html">
+
+<polymer-element name="press-review">
+  <template>
+    <style>
+      .category-name{
+        font-weight: bold;  
+      }
+    </style>
+    <template repeat="{{ category in entriesByCategory.keys }}">
+      <div class="category-name">*{{ category }}* :</div>
+        <br/>
+        <template repeat="{{ item in entriesByCategory[category] }}">
+           <div>&#x2192; {{ item.title }} :</div>
+           <a _href="{{ item.link }}">{{ item.link }}</a>
+           <br/><br/>
+        </template>
+    </template>
+  </template>
+  <script type="application/dart" src="pressreview.dart"></script>
+</polymer-element>
+

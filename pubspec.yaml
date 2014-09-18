@@ -1,0 +1,12 @@
+name: press_review
+description: Dart application that generates a press review from a Google Spreadsheet
+dependencies:
+  browser: any
+  http: any
+  jsonx: any
+  polymer: ">=0.12.0 <0.13.0"
+transformers:
+- polymer:
+    entry_points: web/index.html
+dev_dependencies:
+  unittest: any
