@@ -29,10 +29,10 @@ void handleGet(HttpRequest req) {
   HttpResponse res = req.response;
   print('${req.method}: ${req.uri.path}');
   addCorsHeaders(res);
+
+  res.headers.contentType = new ContentType("application", "json", charset: "utf-8");
   
-  res.headers.add(HttpHeaders.CONTENT_TYPE, 'application/json');
   generatePressReview().then((pressReview){
-      print(pressReview);
       res.write(pressReview);
       res.close();    
   });
